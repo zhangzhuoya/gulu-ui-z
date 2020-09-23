@@ -1,7 +1,6 @@
 <template>
-<button @click="toggle" :class="{checked:checked}">
+<button @click="toggle" :class="{checked:value}">
     <span></span>
-
 </button>
 </template>
 
@@ -10,15 +9,17 @@ import {
     ref
 } from 'vue'
 export default {
+    props: {
+        value: Boolean
+    },
 
-    setup() {
-        const checked = ref(false);
+    setup(props, context) {
         const toggle = () => {
-            checked.value = !checked.value;
+            context.emit("input", !props.value) //触发事件改变父级状态，参数一为事件名，参数2为props改变的值
+
         }
         return {
-            toggle,
-            checked
+            toggle
         }
     }
 }
