@@ -1,11 +1,9 @@
 <template>
 <div>
-    <Button @click="onClick" @focus="onFocus" @mouseover="onMouse">
-        点击
-    </Button>
+
     <Button theme="button">普通按钮</Button>
     <Button theme="link">link按钮</Button>
-    <Button theme="font">文字按钮</Button>
+    <Button theme="text">文字按钮</Button>
 
 </div>
 </template>
