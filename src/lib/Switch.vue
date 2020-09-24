@@ -16,7 +16,6 @@ export default {
     setup(props, context) {
         const toggle = () => {
             context.emit('update: value', !props.value) //事件名必须叫update:value
-
         }
         return {
             toggle
