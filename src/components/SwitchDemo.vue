@@ -1,6 +1,6 @@
 <template>
 <div>
-    <Switch :value="y" @input="y=$event" />
+    <Switch v-model:value="bool" />
 </div>
 </template>
 
@@ -15,10 +15,10 @@ export default {
     },
     // 通过外部控制switch组件的开关
     setup() {
-        const y = ref(false);
+        const bool = ref(false); //设置值
 
         return {
-            y
+            bool
         }
     }
 }

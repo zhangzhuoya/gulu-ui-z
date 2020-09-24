@@ -11,11 +11,11 @@ import {
 export default {
     props: {
         value: Boolean
-    },
+    }, //校验父级传过来的值
 
     setup(props, context) {
         const toggle = () => {
-            context.emit("input", !props.value) //触发事件改变父级状态，参数一为事件名，参数2为props改变的值
+            context.emit('update: value', !props.value) //事件名必须叫update:value
 
         }
         return {
