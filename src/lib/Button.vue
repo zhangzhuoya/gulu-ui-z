@@ -1,20 +1,52 @@
 <template>
 <div>
-    <button class="gulu-button" :class="`gulu-theme-${theme}`">
+    <button class="gulu-button" :class="classes" :disabled="disabled">
+        <span v-if="loading" class="gulu-loadingIndicator"></span>
         <slot></slot>
     </button>
 </div>
 </template>
 
 <script lang="ts">
+import {
+    computed
+} from "vue"
 export default {
     inheritAttrs: false,
     props: {
         theme: {
             type: String,
             default: 'button'
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        loading: {
+            type: Boolean,
+            default: false
+        },
+        size: {
+            type: String,
+            default: "small"
         }
     },
+    setup(props) {
+        const {
+            theme,
+            size
+        } = props
+        const classes = computed(() => {
+            console.log(theme, size)
+            return {
+                [`gulu-theme-${theme}`]: theme,
+                [`gulu-size-${size}`]: size,
+            }
+        })
+        return {
+            classes
+        }
+    }
 }
 </script>
 
