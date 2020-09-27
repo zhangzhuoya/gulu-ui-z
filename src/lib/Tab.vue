@@ -1,6 +1,6 @@
 <template>
 <div>
-    这是一个tab组件
+    <slot />
 </div>
 </template>
 
