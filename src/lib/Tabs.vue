@@ -3,17 +3,20 @@
     这是tabs组件
     <!--可以这样展示-->
     <div class="gulu-tabs-nav">
-        <div class="gulu-tabs-nav-item" v-for="(t,index) in titles" :key="index" :class="{selected:selected===t}"> {{t}}</div>
+        <div class="gulu-tabs-nav-item" @click="select(t)" v-for="(t,index) in titles" :key="index" :class="{selected:selected===t}"> {{t}}</div>
     </div>
     <!--
     // <component :is="defaults[0]" />
     -->
     <div class="gulu-tabs-content">
-        <component class="gulu-tabs-content-item" :is="c" v-for="(c,index) in defaults" :key="index" />
         <!--
-    显示被选中的内容:不可以v-if和v-for不能同时使用
-    -->
+        <component class="gulu-tabs-content-item" :is="c" v-for="(c,index) in defaults" :key="index" />
 
+    显示被选中的内容:不可以v-if和v-for不能同时使用
+
+    -->
+        <component class="gulu-tabs-content-item" :is="current" />
+        {{current}}
     </div>
     <!--
     {{defaults[0]}}
@@ -23,6 +26,9 @@
 </template>
 
 <script lang="ts">
+import {
+    computed
+} from 'vue'
 import Tab from "./Tab.vue"
 export default {
     props: {
@@ -34,7 +40,6 @@ export default {
         // 检查tabs里面的组件是否是tab组件
         // console.log({
         //     ...context.slots.default()[0], //通过这个获取外部传给我们的I内容
-
         // })
         const defaults = context.slots.default()
         console.log(defaults[0].type === Tab) //检查是否是Tab节点
@@ -45,6 +50,21 @@ export default {
                 throw new Error("tabs子组件不是一个tab节点")
             }
         })
+        const select = (title: string) => {
+
+            context.emit('update:selected', title)
+            console.log(title)
+        }
+        /***
+          根据selected的值选中内容
+          vue3 bug 不能渲染出来值
+         */
+        const current = computed(() => {
+            return defaults.filter((tag) => {
+                return tag.props.title === props.selected
+            })[0]
+        })
+
         console.log(defaults[0].props.title)
         const titles = defaults.map((tag) => {
             return tag.props.title
@@ -55,11 +75,11 @@ export default {
          */
         return {
             defaults,
-            titles
+            titles,
+            current,
+            select
         }
-
     }
-
 }
 </script>
 
