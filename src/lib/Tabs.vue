@@ -10,6 +10,10 @@
     -->
     <div class="gulu-tabs-content">
         <component class="gulu-tabs-content-item" :is="c" v-for="(c,index) in defaults" :key="index" />
+        <!--
+    显示被选中的内容:不可以v-if和v-for不能同时使用
+    -->
+
     </div>
     <!--
     {{defaults[0]}}
