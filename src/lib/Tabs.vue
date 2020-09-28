@@ -10,13 +10,11 @@
     -->
     <div class="gulu-tabs-content">
         <!--
-        <component class="gulu-tabs-content-item" :is="c" v-for="(c,index) in defaults" :key="index" />
-
     显示被选中的内容:不可以v-if和v-for不能同时使用
-
-    -->
-        <component class="gulu-tabs-content-item" :is="current" />
+    <component class="gulu-tabs-content-item" :is="current" />
         {{current}}
+    -->
+        <component class="gulu-tabs-content-items" :class="{selected:c.props.title=== selected}" :is="c" v-for="(c,index) in defaults" :key="index" />
     </div>
     <!--
     {{defaults[0]}}
@@ -83,7 +81,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+//不能加scoped 出现bug
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
@@ -91,6 +90,7 @@ $border-color: #d9d9d9;
 .gulu-tabs {
     &-nav {
         display: flex;
+        // display: none;
         color: $color;
         border-bottom: 1px solid $border-color;
 
@@ -110,6 +110,18 @@ $border-color: #d9d9d9;
     }
 
     &-content {
+        // display: none;
+
+        &-items {
+            display: none;
+            // color: red;
+
+            &.selected {
+                display: block;
+                // color: chocolate;
+            }
+        }
+
         padding: 8px 0;
     }
 }
