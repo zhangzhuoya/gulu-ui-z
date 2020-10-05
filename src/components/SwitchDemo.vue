@@ -4,18 +4,20 @@
     <div class="demo">
         <h2>常用语法</h2>
         <div class="demo-component">
-            <Switch11Demo />
+            <component :is="Switch1Demo" />
         </div>
         <div class="demo-actions">
             <Button>查看代码</Button>
         </div>
         <div class="demo-code">
             <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
-            <pre>{{ Switch1Demo.__sourceCode }}</pre>
+
+            <pre class="language-html" v-html="Prism.highlight(Switch2Demo.__sourceCode,Prism.languages.html,'html')"></pre>
         </div>
         <div class="demo-code">
             <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
-            <pre>{{ Switch2Demo.__sourceCode }}</pre>
+            <component :is="Switch2Demo" />
+
         </div>
     </div>
 </div>
@@ -29,7 +31,12 @@ import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
+import "prismjs";
+import 'prismjs/themes/prism.css'
+const Prism = (window as any).Prism
 console.log(Switch1Demo.__sourceCode);
+console.log(Switch2Demo.__sourceCode);
+
 export default {
     components: {
         Switch,
@@ -41,7 +48,8 @@ export default {
         return {
             bool,
             Switch1Demo,
-            Switch2Demo
+            Switch2Demo,
+            Prism
         };
     },
 };

@@ -1,3 +1,6 @@
+<demo>
+hh
+</demo>
 <template>
 <div>
     <h1>支持disabled属性</h1>
