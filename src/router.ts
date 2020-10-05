@@ -6,6 +6,9 @@ import SwitchDemo from "./components/SwitchDemo.vue";
 import ButtonDemo from "./components/ButtonDemo.vue";
 import DialogDemo from "./components/DialogDemo.vue";
 import TabsDemo from "./components/TabDemo.vue";
+import Intro from "./components/Intro.vue";
+import Install from "./components/Install.vue";
+
 
 const history = createWebHashHistory();
 export const router = createRouter({
@@ -20,6 +23,10 @@ export const router = createRouter({
         { path: "button", component: ButtonDemo },
         { path: "dialog", component: DialogDemo },
         { path: "tabs", component: TabsDemo },
+        { path: "intro", component: Intro },
+        { path: "install", component: Install },
+
+
       ],
     },
   ],

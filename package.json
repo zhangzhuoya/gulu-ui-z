@@ -7,13 +7,16 @@
   },
   "dependencies": {
     "at-least-node": "^1.0.0",
+    "github-markdown-css": "^4.0.0",
+    "install": "^0.13.0",
+    "marked": "^1.2.0",
     "vue": "^3.0.0-rc.1",
     "vue-router": "4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "node-sass": "^4.14.1",
-    "vite": "^1.0.0-rc.4",
-    "sass":"^1.26.11"
+    "sass": "^1.26.11",
+    "vite": "^1.0.0-rc.4"
   }
 }
