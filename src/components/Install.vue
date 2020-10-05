@@ -1,17 +1,4 @@
 <template>
-<div class="markdown-body" v-html="install">
-
-</div>
+<Markdown path="../markdown/install.md">
+</Markdown>
 </template>
-
-<script>
-import install from "../markdown/install.md"
-export default {
-    data() {
-        return {
-            install
-        }
-    }
-
-}
-</script>
