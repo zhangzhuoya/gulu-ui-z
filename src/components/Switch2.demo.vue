@@ -1,17 +1,19 @@
 <demo>
-hh
+支持 disabled
 </demo>
 <template>
-<div>
-    <h1>支持disabled属性</h1>
-    <pre>
-       查看代码
-        </pre>
-</div>
+<Switch v-model:value="bool" disable="true" />
 </template>
 
-<script>
+<script lang="ts">
+import Switch from '../lib/Switch.vue'
+import {
+    ref
+} from 'vue'
 export default {
+    components: {
+        Switch,
+    },
 
 }
 </script>

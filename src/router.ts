@@ -6,7 +6,7 @@ import ButtonDemo from "./components/ButtonDemo.vue";
 import DialogDemo from "./components/DialogDemo.vue";
 import Markdown from "./components/Markdown.vue"
 import TabsDemo from "./components/TabDemo.vue";
-// import Intro from "./components/Intro.vue";
+import Intro from "./components/Intro.vue";
 // import Install from "./components/Install.vue";
 import { h } from "vue";
 const md =(path)=>h(Markdown,{path:`../markdown/${path}.md`})
@@ -19,11 +19,12 @@ export const router = createRouter({
       path: "/Doc",
       component: Doc,
       children: [
+        { path: "", redirect:"/doc/intro" },
         { path: "switch", component: SwitchDemo },
         { path: "button", component: ButtonDemo },
         { path: "dialog", component: DialogDemo },
         { path: "tabs", component: TabsDemo },
-        { path: "intro", component:md('intro')},
+        { path: "intro", component:Intro},
         { path: "install", component:md('install')},
 
 

@@ -30,7 +30,6 @@
         </aside>
         <main>
             <router-view></router-view>
-
         </main>
     </div>
 </div>
@@ -79,6 +78,7 @@ export default {
 
 .content {
     display: flex;
+    margin-top: 48px;
 
     >aside {
         flex-shrink: 0;
@@ -91,19 +91,21 @@ export default {
 }
 
 aside {
-    background: lightblue;
+    background: white;
     width: 150px;
-    padding: 16px 0px;
+    padding: 3px 0px 16px;
     position: fixed;
-    top: 0;
+    top: 119px;
     left: 0;
     height: 100%;
-    padding-top: 70px;
+    border-right: 1px solid #e5e5e5;
 
     ul {
         padding-inline-start: 0px;
         margin-block-start: 0px;
         margin-block-end: 0px;
+        margin-right: -1px;
+        padding-left: 15px;
 
         li {
             list-style: none;
@@ -118,13 +120,11 @@ aside {
             }
 
             .router-link-active {
-                background: white;
+                color: #008c8c;
+                border-right: 3px solid #008c8c;
 
             }
 
-            &:hover {
-                text-decoration: underline;
-            }
         }
     }
 
@@ -145,7 +145,6 @@ aside {
 main {
     overflow: auto;
     margin-left: 180px;
-    background: burlywood;
 
 }
 </style>

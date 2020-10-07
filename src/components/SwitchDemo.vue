@@ -1,25 +1,10 @@
 <template>
 <div>
-    <h1>Switch组件展示</h1>
-    <div class="demo">
-        <h2>常用语法</h2>
-        <div class="demo-component">
-            <component :is="Switch1Demo" />
-        </div>
-        <div class="demo-actions">
-            <Button>查看代码</Button>
-        </div>
-        <div class="demo-code">
-            <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+    <h1>Switch 开关</h1>
 
-            <pre class="language-html" v-html="Prism.highlight(Switch2Demo.__sourceCode,Prism.languages.html,'html')"></pre>
-        </div>
-        <div class="demo-code">
-            <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
-            <component :is="Switch2Demo" />
-
-        </div>
-    </div>
+    <p>表示两种相互对立的状态间的切换，多用于触发「开/关」。</p>
+    <Demo :component="Switch1Demo"></Demo>
+    <Demo :component="Switch2Demo"></Demo>
 </div>
 </template>
 
@@ -27,29 +12,24 @@
 import {
     ref
 } from "vue";
-import Switch from "../lib/Switch.vue";
-import Button from "../lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
-import "prismjs";
-import 'prismjs/themes/prism.css'
-const Prism = (window as any).Prism
-console.log(Switch1Demo.__sourceCode);
-console.log(Switch2Demo.__sourceCode);
-
+import Demo from "./Demo.vue";
+import Switch from "../lib/Switch.vue"
 export default {
     components: {
-        Switch,
-    },
-    // 通过外部控制switch组件的开关
-    setup() {
-        const bool = ref(false); //设置值
+        Demo,
+        Switch
 
+    },
+
+    setup() {
+        const bool = ref(false)
         return {
-            bool,
             Switch1Demo,
             Switch2Demo,
-            Prism
+            Switch,
+            bool
         };
     },
 };

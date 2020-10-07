@@ -1,6 +1,6 @@
 <template>
 <div>
-    <button class="gulu-button" :class="classes" :disabled="disabled">
+    <button v-bind="$attrs" class="gulu-button" :class="classes" :disabled="disabled">
         <span v-if="loading" class="gulu-loadingIndicator"></span>
         <slot></slot>
     </button>
@@ -28,19 +28,25 @@ export default {
         },
         size: {
             type: String,
-            default: "small"
+            default: "normal"
+        },
+        level: {
+            type: String,
+            default: "main"
         }
     },
     setup(props) {
         const {
             theme,
-            size
+            size,
+            level
         } = props
         const classes = computed(() => {
             console.log(theme, size)
             return {
                 [`gulu-theme-${theme}`]: theme,
                 [`gulu-size-${size}`]: size,
+                [`gulu-level-${level}`]: level,
             }
         })
         return {
@@ -128,6 +134,7 @@ $grey: grey;
     }
 
     &.gulu-theme-button {
+
         &.gulu-level-main {
             background: $blue;
             color: white;
@@ -140,9 +147,40 @@ $grey: grey;
             }
         }
 
+        &.gulu-level-primary {
+            background: #83c0ff;
+            color: white;
+            border-color: #83c0ff;
+
+        }
+
         &.gulu-level-danger {
             background: $red;
             border-color: $red;
+            color: white;
+
+            &:hover,
+            &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
+            }
+        }
+
+        &.gulu-level-success {
+            background: #67c23a;
+            border-color: #67c23a;
+            color: white;
+
+            &:hover,
+            &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
+            }
+        }
+
+        &.gulu-level-warning {
+            background: #e6a23c;
+            border-color: #e6a23c;
             color: white;
 
             &:hover,
@@ -182,12 +220,37 @@ $grey: grey;
                 color: darken($red, 10%);
             }
         }
+
+        &.gulu-level-success {
+            background: #67c23a;
+            border-color: #67c23a;
+            color: white;
+
+            &:hover,
+            &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
+            }
+        }
+
+        &.gulu-level-warning {
+            background: #e6a23c;
+            border-color: #e6a23c;
+            color: white;
+
+            &:hover,
+            &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
+            }
+        }
     }
 
     &.gulu-theme-button {
         &[disabled] {
             cursor: not-allowed;
             color: $grey;
+            // background: ;
 
             &:hover {
                 border-color: $grey;

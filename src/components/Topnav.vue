@@ -4,18 +4,27 @@
         <svg class="icon logo-xin" aria-hidden="true">
             <use xlink:href="#icon-logo-xin"></use>
         </svg>
+        <span>Fly UI</span>
     </div>
     <ul class="menu">
         <li>
-            <a href="">菜单1</a>
-
+            <a href="">指南</a>
         </li>
-        <li> <a href="">菜单2</a>
+        <li><a href="">组件</a></li>
+        <li>
+            <a href="">主题</a>
+        </li>
+        <li><a href="">资源</a></li>
+        <li><a href="">1.0.0</a></li>
+        <li>
+            <a href="">
+                <svg class="icon icon-git" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            </a>
         </li>
     </ul>
-    <span class="toggleAside">
-
-    </span>
+    <span class="toggleAside"> </span>
 </div>
 <br />
 </template>
@@ -37,7 +46,6 @@ export default {
             toggleMenu,
         };
     },
-
 };
 </script>
 
@@ -45,16 +53,34 @@ export default {
 .topnav {
     display: flex;
     padding: 16px;
-    position: relative;
-    z-index: 10;
+    position: fixed;
     justify-content: center;
     align-items: center;
+    height: 80px;
+    background-color: #fff;
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 80px;
+    z-index: 100;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dcdfe6;
+    box-shadow: 0 2px 8px #f0f1f2;
 
     >.logo {
-        max-width: 6em;
+        max-width: 15em;
         margin-right: auto;
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+
+        span {
+            color: black;
+            width: 100px;
+            display: inline-block;
+        }
 
         .icon {
             width: 1em;
@@ -74,13 +100,18 @@ export default {
         display: flex;
 
         li {
+
             list-style: none;
-            margin-left: 10px;
+            margin-right: 19px;
 
             a {
                 text-decoration: none;
                 color: #008c8c;
 
+                .icon-git {
+                    width: 22px;
+                    height: 22px;
+                }
             }
 
             &:hover {
@@ -102,7 +133,7 @@ export default {
         transform: translateY(-50%);
     }
 
-    @media(max-width:500px) {
+    @media (max-width: 500px) {
         >.menu {
             display: none;
         }
@@ -111,6 +142,5 @@ export default {
             margin: 0 auto;
         }
     }
-
 }
 </style>

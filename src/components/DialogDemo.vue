@@ -1,59 +1,63 @@
 <template>
-<div class="show-dialog" @click="toggle">dialog</div>
-<Dialog v-model:visible="x" :ok="fn1" :cancel="fn2">
-    <template v-solt:content>
-        <strong>hhh</strong>
+<div>Dialog 示例</div>
+<h1>示例1</h1>
+<Button @click="toggle">toggle</Button>
+<Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
+    <template v-slot:content>
+        <strong>hi</strong>
+        <div>hi2</div>
     </template>
-    <template v-solt:text>
-        <strong> 加粗的标题</strong>
+    <template v-slot:title>
+        <strong>加粗的标题</strong>
     </template>
 </Dialog>
-<button @click="showDialog">show</button>
+<h1>示例2</h1>
+<Button @click="showDialog">show</Button>
 </template>
 
 <script lang="ts">
+import Dialog from '../lib/Dialog.vue'
+import Button from '../lib/Button.vue'
 import {
-    ref
-} from "vue";
-import Dialog from "../lib/Dialog.vue";
+    ref,
+    h
+} from 'vue'
 import {
     openDialog
-} from "../lib/openDialog";
+} from '../lib/openDialog'
 export default {
     components: {
-        Dialog: Dialog,
+        Dialog,
+        Button
     },
     setup() {
+        const x = ref(false)
+        const toggle = () => {
+            x.value = !x.value
+        }
+        const f1 = () => {
+            return false
+        }
+        const f2 = () => {}
         const showDialog = () => {
             openDialog({
-                text: "标题",
-                content: "nihaoh",
+                title: h('strong', {}, '标题'),
+                content: '你好',
                 ok() {
-                    console.log("ok");
+                    console.log('ok')
                 },
                 cancel() {
-                    console.log("cancel");
-                },
-            });
-        };
-        const x = ref(false);
-        const toggle = () => {
-            x.value = !x.value;
-            console.log(x.value);
-        };
-        const fn1 = () => {
-            return true;
-        };
-        const fn2 = () => {
-            return false;
-        };
+                    console.log('cancel')
+                }
+            })
+        }
         return {
-            toggle,
             x,
-            fn1,
-            fn2,
+            toggle,
+            f1,
+            f2,
             showDialog
-        };
-    },
-};
+        }
+    }
+}
 </script>
