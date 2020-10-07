@@ -12,8 +12,9 @@
                     <slot name="content" />
                 </main>
                 <footer>
-                    <Button level="main" @click="oks">OK</Button>
-                    <Button @click="cancel">Cancel</Button>
+                    <Button class="cancel" @click="cancel">Cancel</Button>
+                    <Button class="ok" level="main" @click="oks">OK</Button>
+
                 </footer>
             </div>
         </div>
@@ -123,6 +124,11 @@ $border-color: #d9d9d9;
         border-top: 1px solid $border-color;
         padding: 12px 16px;
         text-align: right;
+        display: flex;
+
+        .cancel {
+            margin-right: 65px;
+        }
     }
 
     &-close {

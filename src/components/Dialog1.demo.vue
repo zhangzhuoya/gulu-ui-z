@@ -1,26 +1,24 @@
+<demo>
+基础用法
+<p>通过添加v-model:value="bool"来实现开启关闭</p>
+</demo>
 <template>
-<h3>Dialog 示例</h3>
-<Demo :component="Dialog1Demo"></Demo>
+<Button @click="showDialog">show</Button>
 </template>
 
 <script lang="ts">
-import Dialog from '../lib/Dialog.vue'
-import Button from '../lib/Button.vue'
-import Dialog1Demo from './Dialog1.demo.vue'
-import Demo from './Demo.vue'
 import {
     ref,
     h
 } from 'vue'
+import Button from '../lib/Button.vue'
 import {
     openDialog
 } from '../lib/openDialog'
 export default {
     components: {
-        Dialog,
         Button,
-        Demo
-        // Dialog1Demo
+        // Dialog
     },
     setup() {
         const x = ref(false)
@@ -33,7 +31,7 @@ export default {
         const f2 = () => {}
         const showDialog = () => {
             openDialog({
-                title: '标题',
+                title: h('strong', {}, '标题'),
                 content: '你好',
                 ok() {
                     console.log('ok')
@@ -48,9 +46,20 @@ export default {
             toggle,
             f1,
             f2,
-            showDialog,
-            Dialog1Demo
+            showDialog
         }
     }
+
 }
 </script>
+
+<style lang="scss" scoped>
+.button-show {
+    display: flex;
+
+    .button-container {
+        margin-right: 10px;
+
+    }
+}
+</style>
