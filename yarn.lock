@@ -1602,6 +1602,11 @@ jest-worker@^24.9.0:
     merge-stream "^2.0.0"
     supports-color "^6.1.0"
 
+joycon@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.npm.taobao.org/joycon/download/joycon-2.2.5.tgz#8d4cf4cbb2544d7b7583c216fcdfec19f6be1615"
+  integrity sha1-jUz0y7JUTXt1g8IW/N/sGfa+FhU=
+
 js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.npm.taobao.org/js-base64/download/js-base64-2.6.4.tgz?cache=0&sync_timestamp=1599897619557&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjs-base64%2Fdownload%2Fjs-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
@@ -2065,6 +2070,11 @@ object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved "https://registry.npm.taobao.org/object-assign/download/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+
+ometa@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npm.taobao.org/ometa/download/ometa-0.2.2.tgz#f53c4735ba6d56af5a46b04dfb7c4334c596d44e"
+  integrity sha1-9TxHNbptVq9aRrBN+3xDNMWW1E4=
 
 on-finished@^2.3.0:
   version "2.3.0"
@@ -2552,6 +2562,15 @@ rollup-plugin-dynamic-import-variables@^1.0.1:
     globby "^11.0.0"
     magic-string "^0.25.7"
 
+rollup-plugin-esbuild@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.npm.taobao.org/rollup-plugin-esbuild/download/rollup-plugin-esbuild-2.5.0.tgz#5748352d0b688743ac64fc85fa86939e00098524"
+  integrity sha1-V0g1LQtoh0OsZPyF+oaTngAJhSQ=
+  dependencies:
+    "@rollup/pluginutils" "^3.1.0"
+    joycon "^2.2.5"
+    strip-json-comments "^3.1.1"
+
 rollup-plugin-terser@^5.3.0:
   version "5.3.1"
   resolved "https://registry.npm.taobao.org/rollup-plugin-terser/download/rollup-plugin-terser-5.3.1.tgz?cache=0&sync_timestamp=1599266972539&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frollup-plugin-terser%2Fdownload%2Frollup-plugin-terser-5.3.1.tgz#8c650062c22a8426c64268548957463bf981b413"
@@ -2635,6 +2654,13 @@ scss-tokenizer@^0.2.3:
   dependencies:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
+
+scss@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.npm.taobao.org/scss/download/scss-0.2.4.tgz#040d903ed37c5d4fa4ad33ae1fd389ac12a4e065"
+  integrity sha1-BA2QPtN8XU+krTOuH9OJrBKk4GU=
+  dependencies:
+    ometa "0.2.2"
 
 select@^1.1.2:
   version "1.1.2"
@@ -2874,6 +2900,11 @@ strip-indent@^1.0.1:
   integrity sha1-DHlipq3vp7vUrDZkYKY4VSrhoKI=
   dependencies:
     get-stdin "^4.0.1"
+
+strip-json-comments@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npm.taobao.org/strip-json-comments/download/strip-json-comments-3.1.1.tgz?cache=0&sync_timestamp=1594567586410&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstrip-json-comments%2Fdownload%2Fstrip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
+  integrity sha1-MfEoGzgyYwQ0gxwxDAHMzajL4AY=
 
 supports-color@^2.0.0:
   version "2.0.0"
