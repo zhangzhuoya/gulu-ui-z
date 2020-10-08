@@ -66,11 +66,11 @@ export default {
               根据selected的值选中内容
               vue3 bug 不能渲染出来值
              */
-        const current = computed(() => {
-            return defaults.filter((tag) => {
-                return tag.props.title === props.selected;
-            })[0];
-        });
+        // const current = computed(() => {
+        //     return defaults.filter((tag) => {
+        //         return tag.props.title === props.selected;
+        //     })[0];
+        // });
         const titles = defaults.map((tag) => {
             return tag.props.title;
         }); //遍历props.tilte属性的值
@@ -102,7 +102,7 @@ export default {
         return {
             defaults,
             titles,
-            current,
+            // current,
             select,
             navItems,
             indicator,

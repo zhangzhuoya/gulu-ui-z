@@ -1,29 +1,25 @@
 <template>
-<Tabs v-model:selected="x">
-    <Tab title="标题一">内容1</Tab>
-    <Tab title="标题二">内容二</Tab>
-</Tabs>
+<div>
+    <h1>Tabs标签页</h1>
+    <p>分隔内容上有关联但属于不同类别的数据集合。</p>
+    <Demo :component="Tab1Demo"></Demo>
+</div>
 </template>
 
 <script lang="ts">
 import {
     ref
 } from 'vue'
-import Tab from "../lib/Tab.vue"
-import Tabs from "../lib/Tabs.vue"
+import Tab1Demo from "./Tab1.demo.vue"
+import Demo from "./Demo.vue"
 export default {
     components: {
-        Tab,
-        Tabs
+        Demo
     },
     setup() {
-
-        const x = ref("标题一");
         return {
-            x
+            Tab1Demo
         }
-
     }
-
 }
 </script>

@@ -1,9 +1,8 @@
 <demo>
 基础用法
-<p>通过添加v-model:value="bool"来实现开启关闭</p>
 </demo>
 <template>
-<Button @click="showDialog">show</Button>
+<Button theme="link" @click="showDialog">一句话打开Dialog对话框</Button>
 </template>
 
 <script lang="ts">
@@ -25,10 +24,7 @@ export default {
         const toggle = () => {
             x.value = !x.value
         }
-        const f1 = () => {
-            return false
-        }
-        const f2 = () => {}
+
         const showDialog = () => {
             openDialog({
                 title: h('strong', {}, '标题'),
@@ -44,8 +40,6 @@ export default {
         return {
             x,
             toggle,
-            f1,
-            f2,
             showDialog
         }
     }

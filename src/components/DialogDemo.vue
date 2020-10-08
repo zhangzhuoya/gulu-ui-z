@@ -1,12 +1,16 @@
 <template>
-<h3>Dialog 示例</h3>
+<h1>Dialog 示例</h1>
+<p>Dialog 弹出一个对话框，使用者可自行添Dialog中的内容</p>
 <Demo :component="Dialog1Demo"></Demo>
+<Demo :component="Dialog2Demo"></Demo>
 </template>
 
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
 import Dialog1Demo from './Dialog1.demo.vue'
+import Dialog2Demo from './Dialog2.demo.vue'
+
 import Demo from './Demo.vue'
 import {
     ref,
@@ -49,7 +53,9 @@ export default {
             f1,
             f2,
             showDialog,
-            Dialog1Demo
+            Dialog1Demo,
+            Dialog2Demo
+
         }
     }
 }
