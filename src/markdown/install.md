@@ -1,10 +1,11 @@
 # 安装使用
-推荐使用 npm 的方式安装，它能更好地和 webpack 打包工具配合使用。
+我们推荐使用 npm 或 yarn 的方式进行开发，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
 ```js
-npm istall vue-gulu
+$ npm istall vue-gulu
 ```
 或
 ```js
-yarn add king-ui
+$ yarn add king-ui
 ```
+- 如果你的网络环境不佳，推荐使用 cnpm。
 下一节：开始使用

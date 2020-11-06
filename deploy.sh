@@ -4,7 +4,7 @@ cd dist
 git init
 git add .
 git commit -m"update"
-git branch -M main
-git remote add origin git@github.com:zhangzhuoya/gulu-ui-website.git
-git push -f -u origin main
+git branch -M master
+git remote add origin git@gitee.com:zhang_zhuoa/fly-ui.git
+git push -f -u origin master
 cd -

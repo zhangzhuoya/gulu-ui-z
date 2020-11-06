@@ -1,6 +1,6 @@
 <template>
 <div class="topnav">
-    <div class="logo" @click="toggleMenu">
+    <div class="logo">
         <svg class="icon logo-xin" aria-hidden="true">
             <use xlink:href="#icon-logo-xin"></use>
         </svg>
@@ -8,9 +8,11 @@
     </div>
     <ul class="menu">
         <li>
-            <a href="">指南</a>
+            <router-link to="/doc">指南</router-link>
         </li>
-        <li><a href="">组件</a></li>
+        <li>
+            <router-link to="/doc/switch">组件</router-link>
+        </li>
         <li>
             <a href="">主题</a>
         </li>
@@ -24,7 +26,11 @@
             </a>
         </li>
     </ul>
-    <span class="toggleAside"> </span>
+    <span class="toggleAside">
+        <svg class="icon" aria-hidden="true" @click="toggleMenu">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </span>
 </div>
 <br />
 </template>
@@ -111,6 +117,9 @@ export default {
                 .icon-git {
                     width: 22px;
                     height: 22px;
+                    position: relative;
+                    top: 4px;
+
                 }
             }
 
@@ -129,8 +138,14 @@ export default {
         // background: red;
         position: absolute;
         left: 16px;
-        top: 50%;
+        top: 25%;
         transform: translateY(-50%);
+        display: none;
+
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
     }
 
     @media (max-width: 500px) {
@@ -140,6 +155,10 @@ export default {
 
         >.logo {
             margin: 0 auto;
+        }
+
+        >.toggleAside {
+            display: inline-block;
         }
     }
 }

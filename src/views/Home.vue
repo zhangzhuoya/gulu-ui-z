@@ -1,7 +1,16 @@
 <template>
 <div class="container">
     <div class="topnav-banner">
-        <top-nav />
+        <div class="top-bar">
+            <span class="logo">
+                <svg class="icon logo-xin" aria-hidden="true">
+                    <use xlink:href="#icon-logo-xin"></use>
+                </svg>
+            </span>
+            <span class="doc">
+                <router-link to="/doc">文档</router-link>
+            </span>
+        </div>
         <div class="banner">
             <h1>轱辘UI</h1>
             <h2>一个厉害的UI组件库</h2>
@@ -69,6 +78,37 @@ $text-color:#28d1c9;
             rgba(183, 233, 230, 1) 100%,
             rgba(0, 212, 255, 1) 100%);
     clip-path: ellipse(80% 60% at 50% 40%);
+
+    .top-bar {
+        // margin-top: 10px;
+        position: relative;
+        top: 10px;
+        // display: flo;
+
+        .logo {
+            // position: relative;
+            float: left;
+            margin-left: 20px;
+
+            .icon {
+                height: 20px;
+                width: 20px;
+
+            }
+        }
+
+        .doc {
+            float: right;
+            margin-right: 20px;
+
+            a {
+                color: #00a5ae;
+
+            }
+
+        }
+
+    }
 
     .banner {
         padding: 100px 0;
