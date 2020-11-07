@@ -59,11 +59,14 @@ export default {
             console.log(props.oks())
             if (props.oks?.() !== false) {
                 //如果ok的返回值存在 并且返回值等于false 那么继续执行
+                // 相当于props.oks&&props.ok()!==false
                 close()
                 console.log(props)
             }
         }
         const cancel = () => {
+            // 只有cancel存在的情况下才会执行props?.()
+            props.cancel && props.cancel()
             close()
         }
         return {

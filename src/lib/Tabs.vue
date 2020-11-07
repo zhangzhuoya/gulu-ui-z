@@ -17,7 +17,7 @@
     -->
     <div class="gulu-tabs-content">
         <!--
-    显示被选中的内容:不可以v-if和v-for不能同时使用
+    显示被选中的内容:不能同时使用
     <component class="gulu-tabs-content-item" :is="current" />
         {{current}}
     -->
@@ -50,7 +50,7 @@ export default {
         //     ...context.slots.default()[0], //通过这个获取外部传给我们的内容
         // })
         const defaults = context.slots.default();
-        console.log(defaults)
+        console.log(defaults);
         // console.log(defaults[0].type === Tab) //检查是否是Tab节点
         // 原理：每一个tab.vue都会导出成一个对象
         defaults.map((tags) => {
@@ -63,9 +63,9 @@ export default {
             console.log(title);
         };
         /***
-              根据selected的值选中内容
-              vue3 bug 不能渲染出来值
-             */
+                  根据selected的值选中内容
+                  vue3 bug 不能渲染出来值
+                 */
         // const current = computed(() => {
         //     return defaults.filter((tag) => {
         //         return tag.props.title === props.selected;
@@ -75,8 +75,8 @@ export default {
             return tag.props.title;
         }); //遍历props.tilte属性的值
         /**
-            根据导航宽度设置div的宽度
-             */
+                根据导航宽度设置div的宽度
+                 */
         const navItems = ref < HTMLDivElement[] > ([]); //ts参数是htmldiv的数组
         const indicator = ref < HTMLDivElement > (null);
         const containerItem = ref < HTMLDivElement > (null);
@@ -94,7 +94,7 @@ export default {
             const left2 = containerItem.value.getBoundingClientRect().left;
             const left = left1 - left2;
             indicator.value.style.left = left + "px";
-            console.log(indicator.value.style.left)
+            console.log(indicator.value.style.left);
             console.log(containerItem.value.getBoundingClientRect().width);
         };
         onMounted(x);

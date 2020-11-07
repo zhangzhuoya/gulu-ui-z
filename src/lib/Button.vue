@@ -10,50 +10,50 @@
 <script lang="ts">
 import {
     computed
-} from "vue"
+} from "vue";
 export default {
     inheritAttrs: false,
     props: {
         theme: {
             type: String,
-            default: 'button'
+            default: "button",
         },
         disabled: {
             type: Boolean,
-            default: false
+            default: false,
         },
         loading: {
             type: Boolean,
-            default: false
+            default: false,
         },
         size: {
             type: String,
-            default: "normal"
+            default: "normal",
         },
         level: {
             type: String,
-            default: "main"
-        }
+            default: "main",
+        },
     },
     setup(props) {
         const {
             theme,
             size,
             level
-        } = props
+        } = props;
         const classes = computed(() => {
-            console.log(theme, size)
+            console.log(theme, size);
             return {
                 [`gulu-theme-${theme}`]: theme,
                 [`gulu-size-${size}`]: size,
                 [`gulu-level-${level}`]: level,
-            }
-        })
+            };
+        });
         return {
-            classes
-        }
-    }
-}
+            classes,
+        };
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -134,7 +134,6 @@ $grey: grey;
     }
 
     &.gulu-theme-button {
-
         &.gulu-level-main {
             background: $blue;
             color: white;
@@ -151,7 +150,6 @@ $grey: grey;
             background: #83c0ff;
             color: white;
             border-color: #83c0ff;
-
         }
 
         &.gulu-level-danger {
@@ -281,11 +279,11 @@ $grey: grey;
 
 @keyframes gulu-spin {
     0% {
-        transform: rotate(0deg)
+        transform: rotate(0deg);
     }
 
     100% {
-        transform: rotate(360deg)
+        transform: rotate(360deg);
     }
 }
 </style>
