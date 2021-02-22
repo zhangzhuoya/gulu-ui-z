@@ -112,7 +112,7 @@ export default {
 
             a {
                 text-decoration: none;
-                color: #008c8c;
+                color: #1f39d8;
 
                 .icon-git {
                     width: 22px;

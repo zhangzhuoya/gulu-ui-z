@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Select from "../lib/Select.vue";
+import Select from "../lib/Selector/index.vue";
 export default {
   components: {
     Select,

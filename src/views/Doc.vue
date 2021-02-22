@@ -3,7 +3,7 @@
     <top-nav></top-nav>
     <div class="content">
       <aside v-if="menuVisible">
-        <h4>文档</h4>
+        <h2 style="margin-left: 22px; margin-bottom: 9px">文档</h2>
         <ul>
           <li>
             <router-link to="/doc/intro">介绍</router-link>
@@ -12,7 +12,7 @@
             <router-link to="/doc/install">安装</router-link>
           </li>
         </ul>
-        <h4>组件列表</h4>
+        <h2 style="margin-left: 22px; margin-bottom: 9px">组件列表</h2>
         <ul>
           <li>
             <router-link to="/doc/switch">Switch组件</router-link>
@@ -26,9 +26,9 @@
           <li>
             <router-link to="/doc/tabs">Tabs组件</router-link>
           </li>
-          <li>
+          <!-- <li>
             <router-link to="/doc/select">Select组件</router-link>
-          </li>
+          </li> -->
         </ul>
       </aside>
       <main>
@@ -69,6 +69,7 @@ export default {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
+    position: fixed;
 
     @media (max-width: 500px) {
       padding-left: 0;
@@ -87,16 +88,20 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
+    margin-left: 200px;
   }
 }
 
 aside {
   background: white;
-  width: 150px;
-  padding: 3px 0px 16px;
-  margin-top: 36px;
+  width: 180px;
+  padding: 20px 0px 16px;
   height: 100%;
   border-right: 1px solid #e5e5e5;
+  position: fixed;
+  box-shadow: 5px 0 5px rgb(51 51 51 / 10%);
+    z-index: 1;
+    transition: .4s cubic-bezier(.68,.18,.53,.18) .1s;
 
   ul {
     padding-inline-start: 0px;
@@ -108,6 +113,9 @@ aside {
     li {
       list-style: none;
       margin-bottom: 10px;
+      // &:hover{
+      //   background: rgba($color: , $alpha: 1.0);
+      // }
 
       a {
         text-decoration: none;
@@ -118,8 +126,9 @@ aside {
       }
 
       .router-link-active {
-        color: #008c8c;
-        border-right: 3px solid #008c8c;
+        color: #1f39d8;
+        border-right: 3px solid #1f39d8;
+        // transition: all .2s linear;
       }
     }
   }

@@ -27,7 +27,6 @@
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
 import Button1Demo from "./Button1.demo.vue";
 import Button2Demo from "./Button2.demo.vue";
 import Button3Demo from "./Button3.demo.vue";
@@ -75,7 +74,7 @@ $border-color: #d9d9d9;
     content: "#";
     display: block;
     position: absolute;
-    left: 149px;
+    left: 198px;
     font-weight: 700;
     color: #0d92ff;
     font-weight: 700;

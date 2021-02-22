@@ -1,5 +1,5 @@
 <demo>
-基础用法
+常规使用
 </demo>
 <template>
   <div class="button-show">

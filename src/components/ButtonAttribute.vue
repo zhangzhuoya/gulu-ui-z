@@ -1,7 +1,9 @@
 <template>
   <h3 id="attributes">
     <a aria-hidden="true" class="header-anchor">¶</a>
+    <span>
     Attributes
+    </span>
   </h3>
   <table class="table-container">
     <thead>
@@ -70,12 +72,15 @@ export default {};
     font-size: 22px;
     color: #409eff;
     margin-left: -15px;
-    margin-top: -3px;
+    margin-top: 5px;
   }
   &:hover {
     .header-anchor {
       display: block;
     }
+  }
+  span{
+    font-size: 32px;
   }
 }
 .table-container {

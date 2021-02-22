@@ -49,6 +49,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$green: green;
 $grey: grey;
 .gulu-button {
   width: auto !important;
@@ -130,6 +131,16 @@ $grey: grey;
       &:focus {
         background: darken($red, 10%);
         border-color: darken($red, 10%);
+      }
+    }
+     &.gulu-level-success {
+      background: $green;
+      border-color: $green;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($green, 10%);
+        border-color: darken($green, 10%);
       }
     }
   }

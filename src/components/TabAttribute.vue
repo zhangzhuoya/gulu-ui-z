@@ -1,9 +1,8 @@
 <template>
   <h3 id="attributes">
     <a aria-hidden="true" class="header-anchor">¶</a>
-    <span>
+   <span>
     Attributes
-
     </span>
   </h3>
   <table class="table-container">
@@ -17,21 +16,7 @@
       </tr>
     </thead>
     <tbody>
-   
-      <tr>
-        <td>value / v-model</td>
-        <td>绑定值</td>
-        <td>boolean / string / number</td>
-        <td>—</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td>disabled</td>
-        <td>是否禁用</td>
-        <td>boolean</td>
-        <td>—</td>
-        <td>false</td>
-      </tr>
+     <tr><td>value / v-model</td><td>绑定值，选中选项卡的 name</td><td>string</td><td>—</td><td>第一个选项卡的 name</td></tr>
     </tbody>
   </table>
 </template>
