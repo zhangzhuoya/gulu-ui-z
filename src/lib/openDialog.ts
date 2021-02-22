@@ -9,7 +9,6 @@ export const openDialog = (options) => {
         div.remove()
     }
     const app = createApp({//该函数用来渲染组件
-
         render() {
             return h(Dialog,{visable:true,
                 'onUpdate:visible': (newVisible) => {
